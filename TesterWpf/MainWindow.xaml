@@ -1,0 +1,23 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:c="clr-namespace:Controls;assembly=SyntaxHighlightingTextBox"
+	xmlns:wpf="clr-namespace:Controls.Wpf;assembly=SyntaxHighlightingTextBox"
+	x:Class="TesterWpf.MainWindow" Title="MainWindow" Height="350" Width="525">
+	<Grid>
+		<wpf:SyntaxHighlightingTextBox AcceptsReturn="True">
+			<wpf:SyntaxHighlightingTextBox.HighlightTokenizer>
+				<c:CompositeHighlightTokenizer>
+					<c:RangeHighlightDescriptor ForeColor="Green" OpenString="/*" CloseString="*/" />
+					<c:RangeHighlightDescriptor ForeColor="Green" OpenString="//" CloseString="&#x0A;" />
+					<c:EscapedRangeHighlightDescriptor ForeColor="#A31515" BoundaryCharacter="&quot;" EscapeCharacter="\" IsMultiline="True" />
+					<c:EscapedRangeHighlightDescriptor ForeColor="#A31515" BoundaryCharacter="'" EscapeCharacter="\" IsMultiline="True" />
+					<c:WordHighlightDescriptor ForeColor="Blue" Words="function, property, class, getter, setter, extends, global, super, this" />
+					<c:WordHighlightDescriptor ForeColor="Blue" Words="if, else, switch, case, default, while, do, for, try, catch, throw, with, return, break" />
+					<c:WordHighlightDescriptor ForeColor="Blue" Words="var, new, invalidate, isvalid, delete, typeof, instanceof, incontextof, int, real, string" />
+					<c:WordHighlightDescriptor ForeColor="Blue" Words="void, null, true, false" />
+				</c:CompositeHighlightTokenizer>
+			</wpf:SyntaxHighlightingTextBox.HighlightTokenizer>
+		</wpf:SyntaxHighlightingTextBox>
+	</Grid>
+</Window>
