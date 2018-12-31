@@ -17,6 +17,7 @@ namespace Tester
 			base.OnLoad(e);
 			txtCode.LanguageOption = RichTextBoxLanguageOptions.UIFonts;
 			txtCode.SetTabStops(16);
+			txtCode.HighlightWaitTime = 250;
 			var cmhd = new CompositeHighlightTokenizer();
 			cmhd.HighlightDescriptors.Add(new RangeHighlightDescriptor(Color.Green, Color.Empty, "/*", "*/"));
 			cmhd.HighlightDescriptors.Add(new RangeHighlightDescriptor(Color.Green, Color.Empty, "//", "\n"));
